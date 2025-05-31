@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://885q81hw5b0h"]
 
-[ext_resource type="Script" uid="uid://cit68lnlk8blx" path="res://scenes/hay.gd" id="1_a21xl"]
+[ext_resource type="Script" uid="uid://8ad6fjcsl1i1" path="res://Scenes & Scripts/hay.gd" id="1_a21xl"]
 [ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/Sprites/tilemap_packed.png" id="2_wdxmm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aiu2a"]
