@@ -9,8 +9,8 @@ const JUMP_VELOCITY = -300.0
 
 var addVelocityDebounce: int = 0
 
-@export var platformSpeedMultiplyer = 1
-@export var enemySpeedMultiplyer = 1
+@export var health = 3
+@export var mult = 1
 #@onready var animation_player = $AnimationPlayer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -77,3 +77,7 @@ func _physics_process(delta):
 			velocity.x *= 0.95
 
 	move_and_slide()
+
+func damage(num):
+	mult = num
+	health -= 1*mult

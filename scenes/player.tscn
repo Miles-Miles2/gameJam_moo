@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bie8obrly3d0k"]
 
-[ext_resource type="Script" uid="uid://cy28uldywngem" path="res://Scripts/player copy.gd" id="1_4gsat"]
+[ext_resource type="Script" uid="uid://cy28uldywngem" path="res://scenes/player copy.gd" id="1_4gsat"]
 [ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/Sprites/tilemap_packed.png" id="2_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://co7irv8t8nrdy" path="res://Audio/SFX/jump.wav" id="3_qhqgy"]
 
@@ -109,7 +109,6 @@ radius = 1.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
-collision_layer = 2
 script = ExtResource("1_4gsat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

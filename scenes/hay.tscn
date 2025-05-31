@@ -1,12 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://885q81hw5b0h"]
+[gd_scene load_steps=6 format=3 uid="uid://885q81hw5b0h"]
+
+[ext_resource type="Script" uid="uid://cit68lnlk8blx" path="res://scenes/hay.gd" id="1_a21xl"]
+[ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/Sprites/tilemap_packed.png" id="2_wdxmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiu2a"]
+atlas = ExtResource("2_wdxmm")
+region = Rect2(32, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cc7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiu2a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cc7i"]
+size = Vector2(8, 8)
 
-[node name="hay" type="Node2D"]
+[node name="hay" type="Node2D" groups=["attack", "haybale"]]
+script = ExtResource("1_a21xl")
+active = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1cc7i")
+frame_progress = 0.962258
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_1cc7i")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

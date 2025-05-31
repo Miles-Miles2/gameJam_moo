@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="moo"
-run/main_scene="uid://n8gkh2ucixbh"
+run/main_scene="uid://7gm8pkvj7cll"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="moo"
+
+[global_group]
+
+attack=""
+ground=""
 
 [input]
 
