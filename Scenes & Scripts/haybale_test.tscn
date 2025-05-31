@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://7gm8pkvj7cll"]
+[gd_scene load_steps=8 format=3 uid="uid://7gm8pkvj7cll"]
 
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="1_bnirv"]
 [ext_resource type="PackedScene" uid="uid://885q81hw5b0h" path="res://Scenes & Scripts/hay.tscn" id="2_au0pl"]
 [ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="3_67pqc"]
 [ext_resource type="PackedScene" uid="uid://dojvn0csygi6s" path="res://Scenes & Scripts/spike.tscn" id="4_67pqc"]
+[ext_resource type="PackedScene" uid="uid://5tyf7dlnm3e" path="res://Scenes & Scripts/ufo.tscn" id="5_6xgsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
 texture = ExtResource("1_bnirv")
@@ -477,6 +478,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f0i3m")
 
 [node name="initScene" type="Node2D"]
+
+[node name="ufo" parent="." instance=ExtResource("5_6xgsn")]
+position = Vector2(-206, -180)
 
 [node name="TileMap" type="TileMap" parent="." groups=["ground"]]
 tile_set = SubResource("TileSet_xp8dm")
