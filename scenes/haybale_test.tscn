@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://7gm8pkvj7cll"]
 
-[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="1_bfgfr"]
+[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="1_bnirv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
-texture = ExtResource("1_bfgfr")
+texture = ExtResource("1_bnirv")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
