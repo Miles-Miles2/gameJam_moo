@@ -115,15 +115,15 @@ script = ExtResource("1_4gsat")
 texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_ye5og")
-animation = &"run"
-frame = 1
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_q57gs")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
+[node name="iframes_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -140,5 +140,5 @@ volume_db = -20.0
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_sc5cu")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="iframes_timer" to="." method="_on_iframes_timer_timeout"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

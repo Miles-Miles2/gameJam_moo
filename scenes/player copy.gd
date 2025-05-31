@@ -4,10 +4,11 @@ extends CharacterBody2D
 const SPEED = 90.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var timer = $Timer
+@onready var iframes_timer: Timer = $iframes_timer
 @onready var jumpSFX = $jumpSFX
 
 var addVelocityDebounce: int = 0
+var iframes = false
 
 @export var health = 3
 @export var mult = 1
@@ -78,6 +79,23 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func invincibility():
+	if iframes == true:
+		animated_sprite.visible = false
+		print("on")
+		await get_tree().create_timer(.25).timeout
+		print("off")
+		animated_sprite.visible = true
+		await get_tree().create_timer(.25).timeout
+		invincibility()
+
 func damage(num):
-	mult = num
-	health -= 1*mult
+	if iframes == false:
+		iframes = true
+		mult = num
+		health -= 1*mult
+		iframes_timer.start()
+		invincibility()
+		
+func _on_iframes_timer_timeout() -> void:
+	iframes = false

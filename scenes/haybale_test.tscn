@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7gm8pkvj7cll"]
+[gd_scene load_steps=7 format=3 uid="uid://7gm8pkvj7cll"]
 
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="1_bnirv"]
 [ext_resource type="PackedScene" uid="uid://885q81hw5b0h" path="res://scenes/hay.tscn" id="2_au0pl"]
 [ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://scenes/player.tscn" id="3_67pqc"]
+[ext_resource type="PackedScene" uid="uid://dojvn0csygi6s" path="res://scenes/spike.tscn" id="4_67pqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
 texture = ExtResource("1_bnirv")
@@ -489,3 +490,6 @@ position = Vector2(-141, -182)
 position = Vector2(-138, -47)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="spike" parent="." instance=ExtResource("4_67pqc")]
+position = Vector2(-101, -20)
