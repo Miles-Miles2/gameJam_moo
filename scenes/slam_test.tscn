@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://blwkfa760vv5t"]
+
+[ext_resource type="PackedScene" uid="uid://n8gkh2ucixbh" path="res://scenes/init_scene.tscn" id="1_wtpus"]
+[ext_resource type="PackedScene" uid="uid://bllf5bc4423sl" path="res://scenes/slam.tscn" id="2_8vfh4"]
+
+[node name="initScene" instance=ExtResource("1_wtpus")]
+
+[node name="SlamTEst" parent="." index="3" instance=ExtResource("2_8vfh4")]
+position = Vector2(0, -5)
