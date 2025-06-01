@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv008rsexmhxd"
-path="res://.godot/imported/Alien1.png-0943bea7e5bfcf06888085821db5f01b.ctex"
+uid="uid://dfr0fjt7hbdw1"
+path="res://.godot/imported/ashlands_tileset.png-ffe5ebb98b3605513248dce6aade9e62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Alien1.png"
-dest_files=["res://.godot/imported/Alien1.png-0943bea7e5bfcf06888085821db5f01b.ctex"]
+source_file="res://Assets/tilesets/ashlands_tileset.png"
+dest_files=["res://.godot/imported/ashlands_tileset.png-ffe5ebb98b3605513248dce6aade9e62.ctex"]
 
 [params]
 

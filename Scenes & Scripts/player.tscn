@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bie8obrly3d0k"]
 
 [ext_resource type="Script" uid="uid://cy28uldywngem" path="res://Scenes & Scripts/player copy.gd" id="1_4gsat"]
-[ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/Sprites/tilemap_packed.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/tilesets/tilemap_packed.png" id="2_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://co7irv8t8nrdy" path="res://Audio/SFX/jump.wav" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]

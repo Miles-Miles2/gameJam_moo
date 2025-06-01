@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfr0fjt7hbdw1"
-path="res://.godot/imported/ashlands_tileset.png-a2835330fa08be7368c0be88c54fbcee.ctex"
+uid="uid://cpkj7frxg2xnc"
+path="res://.godot/imported/New Piskel (1).png-d284e9ed0a56ad6adad1db8ad815b773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ashlands_tileset.png"
-dest_files=["res://.godot/imported/ashlands_tileset.png-a2835330fa08be7368c0be88c54fbcee.ctex"]
+source_file="res://Assets/Sprites/New Piskel (1).png"
+dest_files=["res://.godot/imported/New Piskel (1).png-d284e9ed0a56ad6adad1db8ad815b773.ctex"]
 
 [params]
 

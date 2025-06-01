@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://caa0g2ov7jxxs"]
+
+[ext_resource type="Script" uid="uid://cn75lidqdim80" path="res://Scenes & Scripts/tractor.gd" id="1_3bhhc"]
+[ext_resource type="Texture2D" uid="uid://cpkj7frxg2xnc" path="res://Assets/Sprites/New Piskel (1).png" id="2_2tscb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kylyy"]
+atlas = ExtResource("2_2tscb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppfqh"]
+atlas = ExtResource("2_2tscb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_higtl"]
+atlas = ExtResource("2_2tscb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukrvn"]
+atlas = ExtResource("2_2tscb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsklm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kylyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppfqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_higtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukrvn")
+}],
+"loop": true,
+"name": &"drive",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bhhc"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vst7"]
+size = Vector2(32, 30)
+
+[node name="tractor" type="Node2D" groups=["attack", "tractor"]]
+script = ExtResource("1_3bhhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tsklm")
+animation = &"drive"
+frame_progress = 0.632862
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="AnimatedSprite2D"]
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AnimatableBody2D"]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_3bhhc")
+one_way_collision = true
+
+[node name="killbox" type="Area2D" parent="AnimatedSprite2D/AnimatableBody2D" groups=["attack", "tractor"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AnimatableBody2D/killbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6vst7")
+
+[node name="bounce_timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="total_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="AnimatedSprite2D/AnimatableBody2D/killbox" to="." method="_on_killbox_body_entered"]
+[connection signal="timeout" from="bounce_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="total_timer" to="." method="_on_total_timer_timeout"]

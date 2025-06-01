@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://5tyf7dlnm3e"]
 
 [ext_resource type="Script" uid="uid://d13p8xdy1req0" path="res://Scenes & Scripts/ufo.gd" id="1_2is6a"]
-[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="2_gc7dw"]
-[ext_resource type="Texture2D" uid="uid://dv008rsexmhxd" path="res://Assets/Sprites/Alien1.png" id="3_5hdx5"]
-[ext_resource type="Texture2D" uid="uid://c0yoiglxqtxe8" path="res://Assets/Sprites/Alien2.png" id="4_a8sig"]
-[ext_resource type="Texture2D" uid="uid://44icv0wvr5iw" path="res://Assets/Sprites/Alien3.png" id="5_r4rev"]
+[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="2_gc7dw"]
+[ext_resource type="Texture2D" uid="uid://dv008rsexmhxd" path="res://Assets/Sprites/alien/Alien1.png" id="3_5hdx5"]
+[ext_resource type="Texture2D" uid="uid://c0yoiglxqtxe8" path="res://Assets/Sprites/alien/Alien2.png" id="4_a8sig"]
+[ext_resource type="Texture2D" uid="uid://44icv0wvr5iw" path="res://Assets/Sprites/alien/Alien3.png" id="5_r4rev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrymg"]
-size = Vector2(4, 137)
+size = Vector2(4, 187)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbddl"]
 atlas = ExtResource("3_5hdx5")
@@ -38,6 +38,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_l762c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_8o21h"]
 resource_name = "zap"
 length = 2.0
@@ -67,33 +94,6 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_l762c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwyla"]
 _data = {
 &"RESET": SubResource("Animation_l762c"),
@@ -108,8 +108,8 @@ script = ExtResource("1_2is6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 75.5)
-scale = Vector2(0.9, 8.4375)
+position = Vector2(0, 100)
+scale = Vector2(0.9, 11.5)
 texture = ExtResource("2_gc7dw")
 region_enabled = true
 region_rect = Rect2(36.4274, 227.825, 5.29572, 16.3885)
@@ -117,7 +117,7 @@ region_rect = Rect2(36.4274, 227.825, 5.29572, 16.3885)
 [node name="laser_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_hitbox"]
-position = Vector2(0, 75.5)
+position = Vector2(0, 100.5)
 shape = SubResource("RectangleShape2D_xrymg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -125,7 +125,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hdrwh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.949896
+frame_progress = 0.482067
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -16,13 +16,16 @@ extends Node2D
 var should_bounce = false
 
 func _ready() -> void:
+	hitbox.disabled = true
+	ray.visible = false
+	should_bounce = false
 	enable()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active:
 		position.x += speed*delta*dir
-	print(should_bounce)
+	#print(should_bounce)
 	
 func enable():
 	print(pos)
@@ -52,7 +55,6 @@ func _on_timer_timeout() -> void:
 func _on_position_reset_timeout() -> void:
 	active = false
 	position = pos
-
 
 func _on_ufo_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ground") && should_bounce == true:

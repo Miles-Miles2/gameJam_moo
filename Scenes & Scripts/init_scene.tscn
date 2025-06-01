@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://n8gkh2ucixbh"]
 
-[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/Sprites/ashlands_tileset.png" id="1_ef21o"]
+[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="1_ef21o"]
 [ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="2_f0i3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
