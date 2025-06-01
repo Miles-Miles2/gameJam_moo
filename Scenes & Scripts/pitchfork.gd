@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var killbox: CollisionShape2D = $Area2D/CollisionShape2D
+
 var launch = false
 
 
@@ -16,3 +18,7 @@ func _process(delta: float) -> void:
 	# Normalize the vector (optional, but ensures length = 1)
 	direction = direction.normalized()
 	position += direction
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.damage(1)
