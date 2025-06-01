@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c36flo48vb6p7"]
+[gd_scene load_steps=4 format=3 uid="uid://c36flo48vb6p7"]
 
 [ext_resource type="PackedScene" uid="uid://n8gkh2ucixbh" path="res://Scenes & Scripts/init_scene.tscn" id="1_wtpus"]
 [ext_resource type="PackedScene" uid="uid://bllf5bc4423sl" path="res://Scenes & Scripts/slam.tscn" id="2_8vfh4"]
+[ext_resource type="PackedScene" uid="uid://ca456w0ie0ld4" path="res://Scenes & Scripts/pitchfork.tscn" id="3_heu44"]
 
 [node name="initScene" instance=ExtResource("1_wtpus")]
 
 [node name="SlamTEst" parent="." index="3" instance=ExtResource("2_8vfh4")]
 position = Vector2(0, -5)
+
+[node name="pitchfork" parent="." index="4" instance=ExtResource("3_heu44")]
+position = Vector2(69, -81)
