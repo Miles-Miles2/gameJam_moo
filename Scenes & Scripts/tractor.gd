@@ -6,6 +6,7 @@ extends Node2D
 @onready var drive_ani: AnimatedSprite2D = $AnimatedSprite2D
 @onready var bounce_time: Timer = $bounce_timer
 @onready var total_timer: Timer = $total_timer
+@onready var reset_timer: Timer = $reset_timer
 
 @export var should_bounce: bool = false
 @export var active: bool = false
@@ -26,6 +27,10 @@ func disable():
 	killbox.disabled = true
 	top_hitbox.disabled = true
 	speed *= 4
+	await get_tree().create_timer(2).timeout
+	active = false
+	position = pos
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

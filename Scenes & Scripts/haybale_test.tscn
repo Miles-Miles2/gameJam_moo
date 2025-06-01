@@ -510,4 +510,4 @@ position = Vector2(-14, -5)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="spike" parent="." instance=ExtResource("4_67pqc")]
-position = Vector2(-101, -20)
+position = Vector2(-196, -33)

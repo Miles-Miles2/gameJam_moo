@@ -75,8 +75,6 @@ wait_time = 1.5
 wait_time = 10.0
 autostart = true
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="body_entered" from="AnimatedSprite2D/AnimatableBody2D/killbox" to="." method="_on_killbox_body_entered"]
 [connection signal="timeout" from="bounce_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="total_timer" to="." method="_on_total_timer_timeout"]
