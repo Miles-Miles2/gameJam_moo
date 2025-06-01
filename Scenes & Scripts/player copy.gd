@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var iframes_timer: Timer = $iframes_timer
 @onready var jumpSFX = $jumpSFX
+@onready var hurtSFX = $hurtSFX
 
 var addVelocityDebounce: int = 0
 var iframes = false
@@ -54,11 +55,17 @@ func _physics_process(delta):
 		if direction == 0:
 			pass
 			animated_sprite.play("idle")	
+			$AnimationPlayer.stop()
+			$walkSFX.volume_db = -80.0
 		else:
 			pass
 			animated_sprite.play("run")
+			$AnimationPlayer.play("walk_sound")
+			$walkSFX.volume_db = 0
 	else:
 		animated_sprite.play("jump")
+		$AnimationPlayer.stop()
+		$walkSFX.volume_db = -80.0
 		
 	
 	
@@ -92,6 +99,7 @@ func invincibility():
 func damage(num):
 	if iframes == false:
 		iframes = true
+		hurtSFX.play()
 		mult = num
 		health -= 1*mult
 		iframes_timer.start()

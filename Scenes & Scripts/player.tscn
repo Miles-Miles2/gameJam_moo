@@ -1,8 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bie8obrly3d0k"]
+[gd_scene load_steps=20 format=3 uid="uid://bie8obrly3d0k"]
 
 [ext_resource type="Script" uid="uid://cy28uldywngem" path="res://Scenes & Scripts/player copy.gd" id="1_4gsat"]
 [ext_resource type="Texture2D" uid="uid://cvyy6gcjrvoqm" path="res://Assets/tilesets/tilemap_packed.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://dsy5n5ktx4mhd" path="res://Audio/SFX/walk1.wav" id="3_inroy"]
 [ext_resource type="AudioStream" uid="uid://co7irv8t8nrdy" path="res://Audio/SFX/jump.wav" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bt1sdgnbgkmmm" path="res://Audio/SFX/walk2.wav" id="4_hl3bm"]
+[ext_resource type="AudioStream" uid="uid://82ybc751loud" path="res://Audio/SFX/hitHurt.wav" id="6_hl3bm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -81,6 +84,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walkSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walkSFX:stream_paused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_womsh"]
 resource_name = "slide"
@@ -98,10 +125,52 @@ tracks/0/keys = {
 "values": [1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_7ymqe"]
+resource_name = "walk_sound"
+length = 0.40002
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walkSFX:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_inroy"), ExtResource("4_hl3bm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walkSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walkSFX:stream_paused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ess8q"]
 _data = {
 &"RESET": SubResource("Animation_wvi3e"),
-&"slide": SubResource("Animation_womsh")
+&"slide": SubResource("Animation_womsh"),
+&"walk_sound": SubResource("Animation_7ymqe")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sc5cu"]
@@ -115,7 +184,8 @@ script = ExtResource("1_4gsat")
 texture_filter = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_ye5og")
-animation = &"idle"
+animation = &"run"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -132,7 +202,13 @@ libraries = {
 
 [node name="jumpSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qhqgy")
-volume_db = -20.0
+
+[node name="walkSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_inroy")
+volume_db = -80.0
+
+[node name="hurtSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hl3bm")
 
 [node name="Area2D" type="Area2D" parent="."]
 
