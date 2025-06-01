@@ -488,7 +488,7 @@ pattern_0 = SubResource("TileMapPattern_6xgsn")
 position = Vector2(-206, -180)
 
 [node name="tractor" parent="." instance=ExtResource("6_w7v5y")]
-position = Vector2(235, -17)
+position = Vector2(225.673, -16.2449)
 speed = 100
 
 [node name="TileMap" type="TileMap" parent="." groups=["ground"]]
@@ -509,7 +509,7 @@ active = false
 position = Vector2(-14, -5)
 
 [node name="spike" parent="." instance=ExtResource("4_67pqc")]
-position = Vector2(-196, -33)
+position = Vector2(-210.935, -26.4554)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -93)

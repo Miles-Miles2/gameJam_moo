@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://b86jyfqw1mkag" path="res://Scenes & Scripts/spike.gd" id="1_7a7y0"]
 [ext_resource type="Texture2D" uid="uid://coikf6qbae7go" path="res://Assets/Sprites/New Piskel (2).png" id="2_djwj7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h5r0d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbjea"]
 atlas = ExtResource("2_djwj7")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xnjxy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3dwh"]
 atlas = ExtResource("2_djwj7")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40trw"]
+atlas = ExtResource("2_djwj7")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxwqu"]
 atlas = ExtResource("2_djwj7")
@@ -35,26 +39,25 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_djwj7")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbjea"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5r0d"]
 atlas = ExtResource("2_djwj7")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3dwh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnjxy"]
 atlas = ExtResource("2_djwj7")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_40trw"]
-atlas = ExtResource("2_djwj7")
-region = Rect2(0, 64, 32, 32)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tgv6j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h5r0d")
+"texture": SubResource("AtlasTexture_qbjea")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xnjxy")
+"texture": SubResource("AtlasTexture_t3dwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40trw")
 }],
 "loop": false,
 "name": &"attack",
@@ -85,13 +88,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbjea")
+"texture": SubResource("AtlasTexture_h5r0d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t3dwh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_40trw")
+"texture": SubResource("AtlasTexture_xnjxy")
 }],
 "loop": false,
 "name": &"warning",
@@ -107,9 +107,7 @@ script = ExtResource("1_7a7y0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tgv6j")
-animation = &"retreat"
-frame = 5
-frame_progress = 1.0
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="."]
 

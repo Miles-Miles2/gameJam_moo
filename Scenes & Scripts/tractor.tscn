@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://caa0g2ov7jxxs"]
+[gd_scene load_steps=11 format=3 uid="uid://caa0g2ov7jxxs"]
 
 [ext_resource type="Script" uid="uid://cn75lidqdim80" path="res://Scenes & Scripts/tractor.gd" id="1_3bhhc"]
 [ext_resource type="Texture2D" uid="uid://cpkj7frxg2xnc" path="res://Assets/Sprites/New Piskel (1).png" id="2_2tscb"]
+[ext_resource type="AudioStream" uid="uid://dvtgf72x3shjl" path="res://Audio/SFX/tractor-sound-and-ambient-farm-sounds-145531.mp3" id="3_2tscb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kylyy"]
 atlas = ExtResource("2_2tscb")
@@ -74,6 +75,11 @@ wait_time = 1.5
 [node name="total_timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2tscb")
+max_distance = 1000.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="AnimatedSprite2D/AnimatableBody2D/killbox" to="." method="_on_killbox_body_entered"]
 [connection signal="timeout" from="bounce_timer" to="." method="_on_timer_timeout"]

@@ -39,7 +39,7 @@ func disable():
 	hitbox.disabled = true
 	ray.visible = false
 	should_bounce = false
-	speed = 300
+	speed *= 10
 	position_reset_timer.start()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

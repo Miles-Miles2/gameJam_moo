@@ -7,6 +7,7 @@ extends Node2D
 @onready var bounce_time: Timer = $bounce_timer
 @onready var total_timer: Timer = $total_timer
 @onready var reset_timer: Timer = $reset_timer
+@onready var driveSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var should_bounce: bool = false
 @export var active: bool = false
@@ -18,6 +19,7 @@ func _ready() -> void:
 	enable()
 
 func enable():
+	driveSFX.play()
 	total_timer.start()
 	bounce_time.start()
 	drive_ani.play("drive")
@@ -28,6 +30,7 @@ func disable():
 	top_hitbox.disabled = true
 	speed *= 4
 	await get_tree().create_timer(2).timeout
+	driveSFX.stop()
 	active = false
 	position = pos
 	
