@@ -8,6 +8,7 @@ extends Node2D
 @onready var ray: Sprite2D = $Sprite2D
 @onready var position_reset_timer: Timer = $position_reset
 @onready var zap_attack: AnimationPlayer = $AnimationPlayer
+@onready var zap_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var active = false
 @export var speed = 50
@@ -33,6 +34,8 @@ func enable():
 	active = true
 	await get_tree().create_timer(1).timeout
 	zap_attack.play("zap")
+	ray.visible = true
+	zap_sound.play()
 	
 func disable():
 	zap_attack.stop()
