@@ -44,6 +44,6 @@ one_shot = true
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_fscrs")
 
-[connection signal="timeout" from="StartTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://5tyf7dlnm3e"]
+[gd_scene load_steps=16 format=3 uid="uid://5tyf7dlnm3e"]
 
 [ext_resource type="Script" uid="uid://d13p8xdy1req0" path="res://Scenes & Scripts/ufo.gd" id="1_2is6a"]
-[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="2_gc7dw"]
+[ext_resource type="Texture2D" uid="uid://5r7l0c7ht7bg" path="res://Assets/Sprites/laser.png" id="2_2is6a"]
 [ext_resource type="Texture2D" uid="uid://dv008rsexmhxd" path="res://Assets/Sprites/alien/Alien1.png" id="3_5hdx5"]
 [ext_resource type="Texture2D" uid="uid://c0yoiglxqtxe8" path="res://Assets/Sprites/alien/Alien2.png" id="4_a8sig"]
 [ext_resource type="Texture2D" uid="uid://44icv0wvr5iw" path="res://Assets/Sprites/alien/Alien3.png" id="5_r4rev"]
+[ext_resource type="AudioStream" uid="uid://b7g5wd7eqvfqn" path="res://Audio/SFX/laserShoot.wav" id="6_gc7dw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrymg"]
-size = Vector2(4, 187)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc7dw"]
+size = Vector2(36, 186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbddl"]
 atlas = ExtResource("3_5hdx5")
@@ -43,22 +44,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -72,22 +61,10 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("laser_hitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -108,17 +85,16 @@ script = ExtResource("1_2is6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 100)
-scale = Vector2(0.9, 11.5)
-texture = ExtResource("2_gc7dw")
-region_enabled = true
-region_rect = Rect2(36.4274, 227.825, 5.29572, 16.3885)
+position = Vector2(0, 6)
+scale = Vector2(0.485, 0.94)
+texture = ExtResource("2_2is6a")
+offset = Vector2(0, 100)
 
 [node name="laser_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_hitbox"]
-position = Vector2(0, 100.5)
-shape = SubResource("RectangleShape2D_xrymg")
+position = Vector2(0, 101)
+shape = SubResource("RectangleShape2D_gc7dw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -148,6 +124,9 @@ wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ufo_hitbox"]
 shape = SubResource("RectangleShape2D_2is6a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gc7dw")
 
 [connection signal="body_entered" from="laser_hitbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="bounce" to="." method="_on_bounce_timeout"]
