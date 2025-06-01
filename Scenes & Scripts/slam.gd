@@ -23,9 +23,11 @@ func _physics_process(delta):
 	
 func _on_jump_timer_timeout() -> void:
 	use_gravity = false
+	fall = false
 	position = Vector2($"../Player".position.x, JUMP_TO)
 	$SlamTimer.start()
 	await $SlamTimer.timeout
+	fall = true
 	multiply = 1.5
 	velocity = Vector2.ZERO
 	use_gravity = true;
@@ -35,5 +37,5 @@ func _process(delta: float) -> void:
 		position.x = $"../Player".position.x
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and fall == true:
 		body.damage(1)

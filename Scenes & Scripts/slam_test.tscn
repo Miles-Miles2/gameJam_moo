@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://n8gkh2ucixbh" path="res://Scenes & Scripts/init_scene.tscn" id="1_wtpus"]
 [ext_resource type="PackedScene" uid="uid://bllf5bc4423sl" path="res://Scenes & Scripts/slam.tscn" id="2_8vfh4"]
-[ext_resource type="PackedScene" uid="uid://blbcfh8wuabh7" path="res://Scenes & Scripts/pitchfork.tscn" id="3_heu44"]
+[ext_resource type="PackedScene" uid="uid://ca456w0ie0ld4" path="res://Scenes & Scripts/pitchfork.tscn" id="3_heu44"]
 
 [node name="initScene2" instance=ExtResource("1_wtpus")]
 

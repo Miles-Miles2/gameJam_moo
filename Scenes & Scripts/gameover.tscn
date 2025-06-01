@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqui2oi5iaekx"]
+
+[ext_resource type="Script" uid="uid://cxxrahmws5ymy" path="res://gameover.gd" id="1_taapy"]
+[ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="2_fxhfl"]
+[ext_resource type="AudioStream" uid="uid://vluffpwd7om" path="res://Audio/Music/jingles_NES11.ogg" id="3_k8a63"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpiqm"]
+font = ExtResource("2_fxhfl")
+font_size = 128
+
+[sub_resource type="Animation" id="Animation_4pkw3"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f4jcv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ytya"]
+_data = {
+&"RESET": SubResource("Animation_f4jcv"),
+&"fade_in": SubResource("Animation_4pkw3")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_taapy"]
+font = ExtResource("2_fxhfl")
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_taapy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 158.0
+offset_right = 783.0
+offset_bottom = 254.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_gpiqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ytya")
+}
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 438.0
+offset_right = 810.0
+offset_bottom = 534.0
+text = "Press space to restart"
+label_settings = SubResource("LabelSettings_taapy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ytya")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k8a63")
+autoplay = true
