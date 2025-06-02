@@ -23,18 +23,23 @@ func _physics_process(delta):
 	
 func _on_jump_timer_timeout() -> void:
 	use_gravity = false
-	fall = false
+	$JumpTimer.start()
+	$jumpSFX.play()
+	await $JumpTimer.timeout
 	position = Vector2($"../Player".position.x, JUMP_TO)
 	$SlamTimer.start()
 	await $SlamTimer.timeout
-	fall = true
 	multiply = 1.5
 	velocity = Vector2.ZERO
 	use_gravity = true;
-	$JumpTimer.start
+	$StartTimer.start
 func _process(delta: float) -> void:
 	if $SlamTimer.time_left > 0 and $"../Player" :
 		position.x = $"../Player".position.x
+	elif $JumpTimer.time_left > 0 :
+		position = position.lerp(Vector2($"../Player".position.x, JUMP_TO), delta * 5)
+	else :
+		pass
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and fall == true:

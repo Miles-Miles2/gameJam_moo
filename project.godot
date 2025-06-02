@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="moo"
-run/main_scene="uid://7gm8pkvj7cll"
+run/main_scene="uid://s44qbck0o15g"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

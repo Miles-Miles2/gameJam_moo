@@ -1,5 +1,7 @@
 extends Control
 
+@onready var label = $Label
+
 func _ready() -> void:
 	$Label/AnimationPlayer.play("updown")
 
