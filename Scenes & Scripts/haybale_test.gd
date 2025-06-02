@@ -139,7 +139,7 @@ func _on_p_2_time_timeout() -> void:
 	print("Now on phase " + str(phase))
 
 func _on_game_time_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes & Scripts/gameover.tscn")
+	get_tree().change_scene_to_file("res://Scenes & Scripts/ending.tscn")
 	active = false
 	print("YOU DID IT!!!")
 

@@ -85,6 +85,9 @@ func _physics_process(delta):
 			velocity.x *= 0.95
 
 	move_and_slide()
+	
+	if health <= 0 :
+		get_tree().change_scene_to_file("res://Scenes & Scripts/gameover.tscn")
 
 func invincibility():
 	if iframes == true:

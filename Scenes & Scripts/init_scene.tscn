@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://n8gkh2ucixbh"]
 
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="1_ef21o"]
-[ext_resource type="Script" path="res://Scenes & Scripts/cutscene.gd" id="1_ygpta"]
+[ext_resource type="Script" uid="uid://dvkrujkmwhafl" path="res://Scenes & Scripts/cutscene.gd" id="1_ygpta"]
 [ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="2_f0i3m"]
 [ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="3_nu4b5"]
 [ext_resource type="Shader" uid="uid://b113a3opsafpq" path="res://transition.gdshader" id="3_ygpta"]
@@ -1069,10 +1069,10 @@ flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_imuj3")
-offset_left = -117.0
-offset_top = -75.0
-offset_right = 69.0
-offset_bottom = 30.0
+offset_left = -208.0
+offset_top = -212.0
+offset_right = 208.0
+offset_bottom = 25.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_q6jie")
 

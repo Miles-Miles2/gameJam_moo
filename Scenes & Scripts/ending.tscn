@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bwtmiqagavq31"]
+[gd_scene load_steps=20 format=3 uid="uid://bwtmiqagavq31"]
 
-[ext_resource type="Script" path="res://Scenes & Scripts/cutscene.gd" id="1_y3438"]
+[ext_resource type="Script" uid="uid://dvkrujkmwhafl" path="res://Scenes & Scripts/cutscene.gd" id="1_y3438"]
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="2_y3miw"]
 [ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="3_ws18s"]
 [ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="4_5v2ad"]
 [ext_resource type="Texture2D" uid="uid://dhxutv8p44d0x" path="res://Assets/Sprites/death.png" id="5_ciq8j"]
 [ext_resource type="Shader" uid="uid://b113a3opsafpq" path="res://transition.gdshader" id="6_0414s"]
 [ext_resource type="Script" uid="uid://bssa3puvllk2q" path="res://transition.gd" id="7_awc01"]
+[ext_resource type="AudioStream" uid="uid://va8b0pamlcti" path="res://Audio/Music/MicroMenu.wav" id="8_y3miw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
 texture = ExtResource("2_y3miw")
@@ -892,5 +893,8 @@ scale = Vector2(0.5, 0.5)
 toggle_mode = true
 action_mode = 0
 text = "EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_y3miw")
 
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
