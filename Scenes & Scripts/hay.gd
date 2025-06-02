@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bale: AnimatedSprite2D = $AnimatedSprite2D
+@onready var bale: Sprite2D = $Sprite2D
 @onready var hitbox: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var pos = position
 
