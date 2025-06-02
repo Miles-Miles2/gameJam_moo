@@ -4,7 +4,8 @@ extends Node2D
 @onready var hitbox: CollisionShape2D = $Area2D/CollisionShape2D
 
 func _ready():
-	enable()
+	#enable()
+	pass
 
 func enable():
 	spike.play("warning")

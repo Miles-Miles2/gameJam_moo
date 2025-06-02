@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://m717v3yasft1"]
 
-[ext_resource type="Script" path="res://gameover.gd" id="1_taapy"]
+[ext_resource type="Script" uid="uid://cxxrahmws5ymy" path="res://gameover.gd" id="1_taapy"]
 [ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="2_fxhfl"]
 [ext_resource type="AudioStream" uid="uid://vluffpwd7om" path="res://Audio/Music/jingles_NES11.ogg" id="3_k8a63"]
 

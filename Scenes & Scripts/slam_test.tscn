@@ -11,3 +11,4 @@ position = Vector2(0, -5)
 
 [node name="pitchfork" parent="." index="4" instance=ExtResource("3_heu44")]
 position = Vector2(69, -81)
+active = true

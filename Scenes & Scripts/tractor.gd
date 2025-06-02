@@ -13,12 +13,14 @@ extends Node2D
 @export var active: bool = false
 @export var speed: int = 50
 @export var dir: int = 1
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	enable()
+	#enable()
+	pass
 
 func enable():
+	killbox.disabled = false
+	top_hitbox.disabled = false
 	driveSFX.play()
 	total_timer.start()
 	bounce_time.start()
@@ -30,6 +32,8 @@ func disable():
 	top_hitbox.disabled = true
 	speed *= 4
 	await get_tree().create_timer(2).timeout
+	should_bounce = false
+	speed /= 4
 	driveSFX.stop()
 	active = false
 	position = pos

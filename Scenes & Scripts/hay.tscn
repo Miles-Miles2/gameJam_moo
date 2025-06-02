@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cc7i"]
 size = Vector2(8, 8)
 
-[node name="hay" type="Node2D" groups=["attack", "haybale"]]
+[node name="hay" type="Node2D" groups=["attack", "hay"]]
 script = ExtResource("1_a21xl")
 active = true
 

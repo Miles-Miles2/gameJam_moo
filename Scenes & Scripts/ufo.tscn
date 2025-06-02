@@ -51,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -63,7 +63,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -128,10 +128,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2is6a"]
 size = Vector2(16, 16)
 
-[node name="ufo" type="Node2D"]
+[node name="ufo" type="Node2D" groups=["attack", "ufo"]]
 script = ExtResource("1_2is6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(0, 99.5)
 scale = Vector2(0.5, 1)
@@ -143,6 +144,7 @@ region_rect = Rect2(36.4274, 227.825, 5.29572, 16.3885)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_hitbox"]
 position = Vector2(0, 100.5)
 shape = SubResource("RectangleShape2D_xrymg")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -159,14 +161,14 @@ libraries = {
 [node name="bounce" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
-autostart = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
-autostart = true
+one_shot = true
 
 [node name="position_reset" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
+one_shot = true
 
 [node name="ufo_hitbox" type="Area2D" parent="."]
 

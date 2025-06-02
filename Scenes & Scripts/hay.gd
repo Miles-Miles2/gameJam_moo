@@ -8,7 +8,8 @@ extends Node2D
 @export var active  = false
 
 func _ready():
-	enable()
+	#enable()
+	pass
 
 func enable():
 	print(pos)

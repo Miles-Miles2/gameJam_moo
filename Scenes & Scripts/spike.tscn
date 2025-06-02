@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dojvn0csygi6s"]
+[gd_scene load_steps=17 format=3 uid="uid://dojvn0csygi6s"]
 
 [ext_resource type="Script" uid="uid://b86jyfqw1mkag" path="res://Scenes & Scripts/spike.gd" id="1_7a7y0"]
 [ext_resource type="Texture2D" uid="uid://coikf6qbae7go" path="res://Assets/Sprites/New Piskel (2).png" id="2_djwj7"]
@@ -38,6 +38,10 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6loen"]
 atlas = ExtResource("2_djwj7")
 region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djwj7"]
+atlas = ExtResource("2_djwj7")
+region = Rect2(32, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5r0d"]
 atlas = ExtResource("2_djwj7")
@@ -88,6 +92,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_djwj7")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h5r0d")
 }, {
 "duration": 1.0,
@@ -99,7 +106,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ux5pr"]
-size = Vector2(26, 23)
+size = Vector2(24, 17)
 
 [node name="spike" type="Node2D" groups=["attack", "spike"]]
 script = ExtResource("1_7a7y0")
@@ -107,12 +114,12 @@ script = ExtResource("1_7a7y0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tgv6j")
-animation = &"attack"
+animation = &"warning"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3.5)
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_ux5pr")
 disabled = true
 

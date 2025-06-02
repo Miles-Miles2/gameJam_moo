@@ -11,7 +11,7 @@ const JUMP_VELOCITY = -300.0
 var addVelocityDebounce: int = 0
 var iframes = false
 
-@export var health = 3
+@export var health = 4
 @export var mult = 1
 #@onready var animation_player = $AnimationPlayer
 
@@ -89,9 +89,9 @@ func _physics_process(delta):
 func invincibility():
 	if iframes == true:
 		animated_sprite.visible = false
-		print("on")
+		#print("on")
 		await get_tree().create_timer(.25).timeout
-		print("off")
+		#print("off")
 		animated_sprite.visible = true
 		await get_tree().create_timer(.25).timeout
 		invincibility()

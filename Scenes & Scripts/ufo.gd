@@ -10,17 +10,21 @@ extends Node2D
 @onready var zap_attack: AnimationPlayer = $AnimationPlayer
 @onready var zap_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+
 @export var active = false
 @export var speed = 50
 @export var dir = 1
+var dirres
 
 var should_bounce = false
 
 func _ready() -> void:
-	hitbox.disabled = true
-	ray.visible = false
-	should_bounce = false
-	enable()
+	print (dir)
+	pass
+	#hitbox.disabled = true
+	#ray.visible = false
+	#should_bounce = false
+	#enable()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -29,7 +33,9 @@ func _physics_process(delta: float) -> void:
 	#print(should_bounce)
 	
 func enable():
-	print(pos)
+	print(str(dir) + "pLSLSL")
+	dirres = dir
+	timer.start()
 	bounce_time.start()
 	active = true
 	await get_tree().create_timer(1).timeout
@@ -38,10 +44,11 @@ func enable():
 	zap_sound.play()
 	
 func disable():
-	zap_attack.stop()
+	dir = dirres
+	zap_attack.play("RESET")
+	should_bounce = false
 	hitbox.disabled = true
 	ray.visible = false
-	should_bounce = false
 	speed *= 10
 	position_reset_timer.start()
 
@@ -58,6 +65,8 @@ func _on_timer_timeout() -> void:
 func _on_position_reset_timeout() -> void:
 	active = false
 	position = pos
+	should_bounce = false
+	speed /= 10
 
 func _on_ufo_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ground") && should_bounce == true:
