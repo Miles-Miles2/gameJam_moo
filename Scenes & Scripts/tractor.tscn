@@ -87,7 +87,9 @@ autostart = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 scale = Vector2(0.8, 0.8)
 stream = ExtResource("3_2tscb")
+volume_db = -7.0
 max_distance = 1000.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="AnimatedSprite2D/AnimatableBody2D/killbox" to="." method="_on_killbox_body_entered"]
 [connection signal="timeout" from="bounce_timer" to="." method="_on_timer_timeout"]

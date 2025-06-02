@@ -15,42 +15,44 @@ extends Node2D
 @onready var p_3_music: AudioStreamPlayer2D = $"P3 music"
 
 var count = 2
-
+var active = true
 @export var phase = 1
 @export var spiketime: int = 2.5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	p_1_2_music.play()
-	await get_tree().create_timer(3).timeout
 	game_time.start()
-	if game_time.time_left >=175:
+	await get_tree().create_timer(3).timeout
+	if game_time.time_left >=190:
 		print("hi")
 		spikeattack()
 	execute()
 	await get_tree().create_timer(7).timeout
 	spikeattack()
+	
 func execute():
-	if phase == 2:
-		count = 3
-	if phase == 3:
-		count = 4
-	for i in count:
-		var att = int(randf_range(0,4))
-		match att:
-			0:
-				ufoattack()
-				print("HAYTIME")
-			1:
-				tractorattack()
-				print("TRACTOR")
-			2:
-				pitchforkattack()
-				print("UFO")
-			3:
-				hayattack()
-				print("PITCHFORK")
-	await get_tree().create_timer(12).timeout
-	execute()
+	if active == true:
+		if phase == 2:
+			count = 3
+		if phase == 3:
+			count = 4
+		for i in count:
+			var att = int(randf_range(0,4))
+			match att:
+				0:
+					ufoattack()
+					print("HAYTIME")
+				1:
+					tractorattack()
+					print("TRACTOR")
+				2:
+					pitchforkattack()
+					print("UFO")
+				3:
+					hayattack()
+					print("PITCHFORK")
+		await get_tree().create_timer(12).timeout
+		execute()
 	
 func spikeattack():
 	for i in spikearr:
@@ -137,4 +139,10 @@ func _on_p_2_time_timeout() -> void:
 	print("Now on phase " + str(phase))
 
 func _on_game_time_timeout() -> void:
+	get_tree().change_scene_to_file("res://Scenes & Scripts/gameover.tscn")
+	active = false
 	print("YOU DID IT!!!")
+
+
+func _on_safe_timeout() -> void:
+	pass # Replace with function body.
