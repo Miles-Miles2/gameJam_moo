@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://n8gkh2ucixbh"]
+[gd_scene load_steps=19 format=3 uid="uid://drh5dovnwuqdh"]
 
-[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="1_ef21o"]
-[ext_resource type="Script" uid="uid://dvkrujkmwhafl" path="res://Scenes & Scripts/cutscene.gd" id="1_ygpta"]
-[ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="2_f0i3m"]
-[ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="3_nu4b5"]
-[ext_resource type="Shader" uid="uid://b113a3opsafpq" path="res://transition.gdshader" id="3_ygpta"]
-[ext_resource type="Script" uid="uid://bssa3puvllk2q" path="res://transition.gd" id="4_q6jie"]
-[ext_resource type="Texture2D" uid="uid://dhxutv8p44d0x" path="res://Assets/Sprites/death.png" id="5_q6jie"]
+[ext_resource type="Script" uid="uid://dvkrujkmwhafl" path="res://Scenes & Scripts/cutscene.gd" id="1_y3438"]
+[ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="2_y3miw"]
+[ext_resource type="PackedScene" uid="uid://bie8obrly3d0k" path="res://Scenes & Scripts/player.tscn" id="3_ws18s"]
+[ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="4_5v2ad"]
+[ext_resource type="Texture2D" uid="uid://dhxutv8p44d0x" path="res://Assets/Sprites/death.png" id="5_ciq8j"]
+[ext_resource type="Shader" uid="uid://b113a3opsafpq" path="res://transition.gdshader" id="6_0414s"]
+[ext_resource type="Script" uid="uid://bssa3puvllk2q" path="res://transition.gd" id="7_awc01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
-texture = ExtResource("1_ef21o")
+texture = ExtResource("2_y3miw")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -479,187 +479,12 @@ texture = ExtResource("1_ef21o")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f0i3m")
 
-[sub_resource type="LabelSettings" id="LabelSettings_ygpta"]
-font = ExtResource("3_nu4b5")
-
-[sub_resource type="Animation" id="Animation_q6jie"]
-resource_name = "cutscene"
-length = 36.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Camera2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0, -93), Vector2(-24, -22)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Camera2D:zoom")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(2.785, 2.785), Vector2(6.295, 6.295)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Sprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 7.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Label2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Label3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 11, 16),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Label4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 17, 21.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Label5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 22, 25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Label6:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 26, 29),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Label7:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 29.5, 32.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Label8:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 33, 36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../ColorRect:size")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(416, 237), Vector2(186, 105)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../ColorRect:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(-208, -212), Vector2(-117, -75)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../CPUParticles2D:emitting")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 7.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_k0yvl"]
+[sub_resource type="Animation" id="Animation_y3miw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:visible")
+tracks/0/path = NodePath("Label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -671,168 +496,151 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Camera2D:position")
+tracks/1/path = NodePath("Label2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -93)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Camera2D:zoom")
+tracks/2/path = NodePath("Label3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.785, 2.785)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Sprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Label2:visible")
+tracks/4/path = NodePath("Player:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Label3:visible")
+tracks/5/path = NodePath("Control:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Label4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Label5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Label6:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Label7:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Label8:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../ColorRect:size")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0.001),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(416, 237)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../ColorRect:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0.001),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-208, -212)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../CPUParticles2D:emitting")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_imuj3"]
-_data = {
-&"RESET": SubResource("Animation_k0yvl"),
-&"cutscene": SubResource("Animation_q6jie")
+[sub_resource type="Animation" id="Animation_y3438"]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 12.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12.7671),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ws18s"]
+_data = {
+&"RESET": SubResource("Animation_y3miw"),
+&"cutscene": SubResource("Animation_y3438")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v2ad"]
+font = ExtResource("4_5v2ad")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_imuj3"]
-shader = ExtResource("3_ygpta")
+shader = ExtResource("6_0414s")
 shader_parameter/circle_size = 1.05
 shader_parameter/screen_width = 1152.0
 shader_parameter/screen_height = 648.0
@@ -928,7 +736,8 @@ _data = {
 }
 
 [node name="initScene" type="Node2D"]
-script = ExtResource("1_ygpta")
+script = ExtResource("1_y3438")
+ending = true
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -936,153 +745,24 @@ tile_set = SubResource("TileSet_xp8dm")
 format = 2
 layer_0/tile_data = PackedInt32Array(65524, 1376256, 1, 65525, 1376256, 1, 65526, 1376256, 1, 65527, 1376256, 1, 65528, 1376256, 1, 65529, 1376256, 1, 65530, 1376256, 1, 65531, 1376256, 1, 65532, 1376256, 1, 65533, 1376256, 1, 65534, 1376256, 1, 65535, 1376256, 1, 0, 1376256, 1, 1, 1376256, 1, 2, 1376256, 1, 3, 1376256, 1, 4, 1376256, 1, 5, 1376256, 1, 6, 1376256, 1, 7, 1376256, 1, 8, 1376256, 1, 9, 1376256, 1, 10, 1376256, 1, 11, 1376256, 1, -65524, 1310720, 2, -131060, 1310720, 2, -196596, 1310720, 2, -262132, 1310720, 2, -327668, 1310720, 2, -393204, 1310720, 2, -458740, 1310720, 2, -524276, 1310720, 2, -589812, 1310720, 2, -655348, 1310720, 2, -720884, 1310720, 2, -786420, 1310720, 2, -851957, 1376256, 3, -851958, 1376256, 3, -851959, 1376256, 3, -851960, 1376256, 3, -851961, 1376256, 3, -851962, 1376256, 3, -851963, 1376256, 3, -851964, 1376256, 3, -851965, 1376256, 3, -851966, 1376256, 3, -851967, 1376256, 3, -851968, 1376256, 3, -786433, 1376256, 3, -786434, 1376256, 3, -786435, 1376256, 3, -786436, 1376256, 3, -786437, 1376256, 3, -786438, 1376256, 3, -786439, 1376256, 3, -786440, 1376256, 3, -786441, 1376256, 3, -786442, 1376256, 3, -786443, 1376256, 3, -786444, 1376256, 3, 12, 1507328, 1, 65523, 1572864, 1, -786445, 1572864, 2, -851956, 1507328, 2, -720909, 1441792, 2, -655373, 1441792, 2, -589837, 1441792, 2, -524301, 1441792, 2, -458765, 1441792, 2, -393229, 1441792, 2, -327693, 1441792, 2, -262157, 1441792, 2, -196621, 1441792, 2, -131085, 1441792, 2, -65549, 1441792, 2, -13, 1441792, 2, -851981, 65536, 1, -851980, 65536, 1, -851979, 65536, 1, -851978, 65536, 1, -851977, 65536, 1, -851976, 65536, 1, -851975, 65536, 1, -851974, 65536, 1, -851973, 65536, 1, -851972, 65536, 1, -851971, 65536, 1, -851970, 65536, 1, -851969, 65536, 1, -917504, 65536, 1, -917503, 65536, 1, -917502, 65536, 1, -917501, 65536, 1, -917500, 65536, 1, -917499, 65536, 1, -917498, 65536, 1, -917497, 65536, 1, -917496, 65536, 1, -917495, 65536, 1, -917494, 65536, 1, -917493, 65536, 1, -917492, 65536, 1, 65548, 65536, 1, 65547, 65536, 1, 65546, 65536, 1, 65545, 65536, 1, 65544, 65536, 1, 65543, 65536, 1, 65542, 65536, 1, 65541, 65536, 1, 65540, 65536, 1, 65539, 65536, 1, 65538, 65536, 1, 65537, 65536, 1, 65536, 65536, 1, 131071, 65536, 1, 131070, 65536, 1, 131069, 65536, 1, 131068, 65536, 1, 131067, 65536, 1, 131066, 65536, 1, 131065, 65536, 1, 131064, 65536, 1, 131063, 65536, 1, 131062, 65536, 1, 131061, 65536, 1, 131060, 65536, 1, 131059, 65536, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_f0i3m")]
+[node name="Player" parent="." instance=ExtResource("3_ws18s")]
 position = Vector2(-65, 1)
 script = null
 
-[node name="Label" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -94.0
-offset_top = -31.0
-offset_right = -34.0
-offset_bottom = -8.0
-text = "Where am I?"
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="Label2" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -30.0
-offset_top = -28.0
-offset_right = 92.0
-offset_bottom = -5.0
-scale = Vector2(0.5, 0.5)
-text = "You are dead, young cow."
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="Label3" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -113.0
-offset_top = -35.0
-offset_right = 81.0
-offset_bottom = 7.0
-scale = Vector2(0.5, 0.5)
-text = "Is the farmer here, too? 
-I was getting sick and tired of him 
-abusing me and the others"
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="Label4" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -49.0
-offset_top = -39.0
-offset_right = 145.0
-offset_bottom = 3.0
-scale = Vector2(0.5, 0.5)
-text = "Yes, the farmer is here as well, but I feel so sorry for what he put you through."
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label5" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -49.0
-offset_top = -39.0
-offset_right = 145.0
-offset_bottom = 3.0
-scale = Vector2(0.5, 0.5)
-text = "You know what? I can help you get around this farmer, if you please."
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label6" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -92.0
-offset_top = -32.0
-offset_right = 16.0
-offset_bottom = -5.0
-scale = Vector2(0.5, 0.5)
-text = "Thank you so much, sir!"
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label7" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -48.0
-offset_top = -41.0
-offset_right = 146.0
-offset_bottom = 1.0
-scale = Vector2(0.5, 0.5)
-text = "If you can survive the farmer for three minutes, I can let you go, and he will stay. Deal?"
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label8" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -92.0
-offset_top = -27.0
-offset_right = 16.0
-scale = Vector2(0.5, 0.5)
-text = "Deal! Let's go!"
-label_settings = SubResource("LabelSettings_ygpta")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -93)
+position = Vector2(-35, -34)
 rotation = 3.14159
 scale = Vector2(193.192, 10.1201)
-zoom = Vector2(2.785, 2.785)
-
-[node name="Cutscene" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Player")
-libraries = {
-&"": SubResource("AnimationLibrary_imuj3")
-}
+zoom = Vector2(5.54, 5.54)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -8)
-texture = ExtResource("5_q6jie")
+texture = ExtResource("5_ciq8j")
 flip_h = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_imuj3")
-offset_left = -117.0
-offset_top = -75.0
-offset_right = 69.0
-offset_bottom = 30.0
-color = Color(0, 0, 0, 1)
-script = ExtResource("4_q6jie")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
-root_node = NodePath("../../Sprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_6mosr")
-}
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-65, 0)
 emitting = false
 amount = 50
 one_shot = true
@@ -1103,3 +783,114 @@ linear_accel_max = 39.44
 radial_accel_min = 70.42
 radial_accel_max = 70.42
 scale_amount_max = 10.0
+
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ws18s")
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -30.0
+offset_top = -34.0
+offset_right = 88.0
+offset_bottom = -7.0
+scale = Vector2(0.5, 0.5)
+text = "Congratulations, cow! You did great!"
+label_settings = SubResource("LabelSettings_5v2ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -30.0
+offset_top = -34.0
+offset_right = 88.0
+offset_bottom = -7.0
+scale = Vector2(0.5, 0.5)
+text = "I will now let you back to be alive again."
+label_settings = SubResource("LabelSettings_5v2ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = -95.0
+offset_top = -26.0
+offset_right = 23.0
+offset_bottom = 1.0
+scale = Vector2(0.5, 0.5)
+text = "Thank you!"
+label_settings = SubResource("LabelSettings_5v2ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_imuj3")
+offset_left = -140.0
+offset_top = -94.0
+offset_right = 71.0
+offset_bottom = 26.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_awc01")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+root_node = NodePath("../../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_6mosr")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -124.0
+offset_top = -87.0
+offset_right = -77.0
+offset_bottom = -75.0
+scale = Vector2(2, 2)
+text = "The end"
+label_settings = SubResource("LabelSettings_5v2ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Button" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -114.0
+offset_top = -59.0
+offset_right = -48.0
+offset_bottom = -28.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+text = "REPLAY"
+
+[node name="Button2" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -114.0
+offset_top = -40.0
+offset_right = -48.0
+offset_bottom = -9.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+action_mode = 0
+text = "EXIT"
+
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
