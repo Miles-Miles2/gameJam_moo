@@ -71,7 +71,7 @@ func hayattack():
 		mult = 2
 	if phase == 3:
 		mult = 3
-	for i in hayarr.size()/3*mult:
+	for i in (hayarr.size()/3*mult)-1:
 		var index = hayindex()
 		hayarr[index].enable()
 		await get_tree().create_timer(.5).timeout
