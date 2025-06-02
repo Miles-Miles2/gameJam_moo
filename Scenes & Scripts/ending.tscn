@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwtmiqagavq31"]
+[gd_scene load_steps=21 format=3 uid="uid://bwtmiqagavq31"]
 
 [ext_resource type="Script" uid="uid://dvkrujkmwhafl" path="res://Scenes & Scripts/cutscene.gd" id="1_y3438"]
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="2_y3miw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://b113a3opsafpq" path="res://transition.gdshader" id="6_0414s"]
 [ext_resource type="Script" uid="uid://bssa3puvllk2q" path="res://transition.gd" id="7_awc01"]
 [ext_resource type="AudioStream" uid="uid://va8b0pamlcti" path="res://Audio/Music/MicroMenu.wav" id="8_y3miw"]
+[ext_resource type="Texture2D" uid="uid://b56tgsrsfadef" path="res://Assets/IMG_3287.jpg" id="9_ws18s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0i3m"]
 texture = ExtResource("2_y3miw")
@@ -896,5 +897,10 @@ text = "EXIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_y3miw")
+
+[node name="Img3287" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-17, -102)
+texture = ExtResource("9_ws18s")
 
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

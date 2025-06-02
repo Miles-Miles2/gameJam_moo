@@ -1,8 +1,10 @@
 extends Node2D
 
 @export var ending = false
+@onready var musicSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
+	musicSFX.play()
 	$Cutscene.play("cutscene")
 	if (ending == false) :
 		await get_tree().create_timer(36.5).timeout

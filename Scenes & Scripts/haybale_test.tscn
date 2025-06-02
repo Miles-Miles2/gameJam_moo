@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7gm8pkvj7cll"]
+[gd_scene load_steps=16 format=3 uid="uid://7gm8pkvj7cll"]
 
 [ext_resource type="Texture2D" uid="uid://dfr0fjt7hbdw1" path="res://Assets/tilesets/ashlands_tileset.png" id="1_bnirv"]
 [ext_resource type="Script" uid="uid://cdn5je8l1n6o" path="res://Scenes & Scripts/haybale_test.gd" id="1_ft42d"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://ottr6ilm8l3j" path="res://Assets/Kenney Pixel.ttf" id="8_s7ysm"]
 [ext_resource type="AudioStream" uid="uid://p5sfa1exc4p4" path="res://Audio/Music/Boss Stage 1.wav" id="10_7mmi5"]
 [ext_resource type="AudioStream" uid="uid://dwkk68om1lgs3" path="res://Audio/Music/Boss Stage 2.wav" id="11_5k1w3"]
+[ext_resource type="Texture2D" uid="uid://b56tgsrsfadef" path="res://Assets/IMG_3287.jpg" id="12_5k1w3"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6xgsn"]
 tile_data = PackedInt32Array(0, 2162688, 3, 65536, 2162688, 4, 131072, 2162688, 5, 196608, 2162688, 6, 1, 2228224, 3, 65537, 2228224, 4, 131073, 2228224, 5, 196609, 2228224, 6)
@@ -565,11 +566,11 @@ position = Vector2(166, -15)
 [node name="Tractors" type="Node" parent="."]
 
 [node name="tractor" parent="Tractors" instance=ExtResource("6_w7v5y")]
-position = Vector2(221, -11)
+position = Vector2(219.321, -10.268)
 speed = 100
 
 [node name="tractor2" parent="Tractors" instance=ExtResource("6_w7v5y")]
-position = Vector2(-221, -11)
+position = Vector2(-218.322, -10.4828)
 rotation = 3.14159
 scale = Vector2(0.8, -0.8)
 speed = 100
@@ -705,6 +706,11 @@ autoplay = true
 
 [node name="P3 music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_5k1w3")
+
+[node name="Img3287" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(14.923, -74.2442)
+texture = ExtResource("12_5k1w3")
 
 [connection signal="timeout" from="Timers/game_time" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="Timers/P1_time" to="." method="_on_p_1_time_timeout"]
